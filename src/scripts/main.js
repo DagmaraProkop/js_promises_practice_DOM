@@ -37,7 +37,7 @@ const thirdPromise = new Promise((resolve) => {
         }
 
         if (e.button === 2) {
-            rightClickOccured = true;
+            rightClickOccurred = true;
         }
 
         if (leftClickOccurred && rightClickOccurred) {
@@ -56,7 +56,7 @@ function handleSuccess(message) {
 
     div.dataset.qa = 'notification';
     div.classList.add('notification', 'success');
-    div.textContent = error.message;
+    div.textContent = message;
     document.body.appendChild(div);
 }
 
