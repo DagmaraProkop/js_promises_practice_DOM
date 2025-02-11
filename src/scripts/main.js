@@ -1,9 +1,9 @@
 'use strict';
 
 let leftClickOccurred = false;
-let rightClickOccured = false;
+let rightClickOccurred = false;
 
-const firtPromise = new Promise((resolve, reject) => {
+const firstPromise = new Promise((resolve, reject) => {
     const handleLeftClick = () => {
         resolve('First promise was resolved on a left click in the document');
         document.removeEventListener('click', handleLeftClick);
@@ -40,7 +40,7 @@ const thirdPromise = new Promise((resolve) => {
             rightClickOccured = true;
         }
 
-        if (leftClickOccurred && rightClickOccured) {
+        if (leftClickOccurred && rightClickOccurred) {
             resolve('Third promise was resolved');
             document.removeEventListener('click', handleClick);
             document.removeEventListener('contextmenu', handleClick);
@@ -56,7 +56,7 @@ function handleSuccess(message) {
 
     div.dataset.qa = 'notification';
     div.classList.add('notification', 'success');
-    div.textContent = message;
+    div.textContent = error.message;
     document.body.appendChild(div);
 }
 
@@ -65,7 +65,7 @@ function handleError(error) {
 
     div.dataset.qa = 'notification';
     div.classList.add('notification', 'error');
-    div.textContent = message;
+    div.textContent = error.message;
     document.body.appendChild(div);
 }
 
